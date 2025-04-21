@@ -19,10 +19,11 @@ header.site-header {
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  border-bottom: 2px solid #444;
+  background: rgba(60, 45, 30, 0.85);
+  border-bottom: 2px solid #5c4631;
   gap: 1.5rem;
   flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(60, 45, 30, 0.3);
 }
 
 .logo {
@@ -42,23 +43,26 @@ h1 {
   font-size: 2.5rem;
   margin: 0.2rem 0;
   letter-spacing: 0.04em;
+  color: #fcebb7;
+  font-weight: 700;
+  font-family: 'Literata', serif;
 }
 
 .subtitle {
   font-size: 1.2rem;
   font-style: italic;
-  color: #bbb;
+  color: #a38c74;
   margin: 0.2rem 0 0;
 }
 
-/* --- Main Content --- */
+/* --- Navigation --- */
 
 nav.top-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  background: #333;
+  background: #3a2e22;
 }
 
 nav.top-nav li {
@@ -72,7 +76,7 @@ nav.top-nav > ul > li {
 nav.top-nav a {
   color: #fcebb7;
   text-decoration: none;
-  border-bottm: 1px dotted #666;
+  border-bottom: 1px dotted #a38c74;
   padding: 0.2rem 1rem;
   display: block;
 }
@@ -82,7 +86,7 @@ nav.top-nav .submenu {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #444;
+  background: #5c4631;
   flex-direction: column;
   min-width: 200px;
   z-index: 9999;
@@ -97,8 +101,10 @@ nav.top-nav .has-submenu:hover .submenu {
 }
 
 nav.top-nav .submenu a:hover {
-  background-color: #555;
+  background-color: #a38c74;
 }
+
+/* --- Main Content --- */
 
 main {
   max-width: 1000px;
@@ -118,44 +124,46 @@ h2 {
   margin-top: 0;
 }
 
+h1, h2, h3 {
+  color: #fcebb7;
+  font-weight: 700;
+  font-family: 'Literata', serif;
+}
+
 a {
-  color: #0000ff;
+  color: #5c4631;
   text-decoration: underline;
-  border-bottom: 1px dotted #888;
+  border-bottom: 1px dotted #a38c74;
 }
 
 a:hover {
-  color: #fff;
-  border-bottom: 1px solid #fff;
+  color: #fcebb7;
+  border-bottom: 1px solid #fcebb7;
 }
 
-  h1, h2, h3 {
-      color: #e7ddd0;
-      font-weight: 700;
-      font-family: 'Literata', serif;
-  }
-  pre, code {
-      font-family: 'IBM Plex Mono', monospace;
-      background-color: #111;
-      background: #111;
-      color: #cfcfcf;
-      padding: 1rem;
-      border-radius: 4px;
-      line-height: 1.5;
-      overflow-x: auto;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  }
+/* --- Code Blocks --- */
 
-  /* For inline code snippets */
-  code {
-      padding: 0.2em 0.4em;
-      font-size: 0.95em;
-      background-color: #111;
-      border-radius: 3px;
-  }
-  pre {
-      border-top: 3px solid #aaa;
-  }
+pre, code {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #2d241b;
+  color: #f4e6d7;
+  padding: 1rem;
+  border-radius: 4px;
+  line-height: 1.5;
+  overflow-x: auto;
+  box-shadow: 0 0 8px rgba(92, 70, 49, 0.5);
+}
+
+/* For inline code snippets */
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.95em;
+  border-radius: 3px;
+  background-color: #2d241b;
+}
+pre {
+  border-top: 3px solid #5c4631;
+}
 
 /* --- Footer --- */
 
@@ -163,10 +171,13 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 1rem;
-  color: #777;
-  background: #111;
-  border-top: 1px solid #333;
+  color: #a38c74;
+  background: #3a2e22;
+  border-top: 1px solid #5c4631;
+  box-shadow: 0 -4px 8px rgba(60, 45, 30, 0.3);
 }
+
+/* --- Responsive --- */
 
 @media (max-width: 600px) {
   .site-header {
@@ -192,7 +203,7 @@ footer {
   }
 
   body {
-    font-size: 1rem; /* Slightly smaller base font */
+    font-size: 1rem;
   }
 
   h1 {
@@ -201,11 +212,10 @@ footer {
   }
 
   h2 {
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 
   .subtitle {
     font-size: 0.9rem;
   }
-
 }
