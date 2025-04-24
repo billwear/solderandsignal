@@ -38,6 +38,41 @@
 	  <p><em>Note that no endorsement is offered to any particular brand of battery here, in case you can't tell from the weird mix.</em></p>
 	</div>
       </div>
+
+      <h2>🔋 Step Zero: Are These Batteries Even Any Good?</h2>
+<p>Before we even dream of building a creaky power supply, let’s face it: we don't even know if the batteries work. I mean, I do have a voltmeter, but let’s assme we don’t. Let's assume we’re surviving off the land — and the junk drawer.</p>
+
+<p>Here’s how to test batteries with just an LED and a resistor, while sneaking in a little Ohm’s Law.</p>
+
+<h3>🔦 LED + Resistor = Instant Battery Tester</h3>
+      <p>To check if a battery has enough voltage left to be useful, we can wire up a very basic circuit:</p>
+      
+      <div class="content-wrap">
+	<img src="images/battery-test-circuit.png" alt="A battery test circuit as it looks in real life." />
+	<div class="text">
+	  <p><em>Ah, so the light isn't lit, so the battery's bad?  Not so fast: there's a little math we need to do.</em></p>
+	</div>
+      </div>
+
+      <p>This setup doesn’t tell us the exact voltage, but it gives us something better: a visual indicator under load. If the LED lights up, the battery has enough voltage and current to be worth using.  So this this LED isn't lit, does that mean that the battery's bad?</p>
+
+      <p>Well, let’s do the math (Ohm’s Law style).  Ohm’s Law is: <strong>V = I x R</strong>, where V is voltage, I is current, and R is resistance.  Pretty basic. We can tell whether a battery has any power left by checking the <em>current</em> (I).  If we solve this equation for current, it's <strong>I = (V_battery - V_forward) / R</strong>.</p>
+      <p>You'll noticed my solved form of Ohm's law has a more complex voltage "mini-equation": <strong>(V_battery - V_forward)</strong>.  V_forward represents the <em>Forward</em> voltage of the LED, which is sometimes also called the <em>threshold voltage</em>.  That's the voltage it takes get get current to even flow through the LED.</p>
+      <p>These forward voltages are different for different colors of LEDs.  We can use that our advantage if we do it right -- but we'll get to that later. In the meantime, have a look at this chart:</p>
+
+            <div class="content-wrap">
+	<img src="images/led-output.png" alt="A battery test circuit as it looks in real life." />
+	<div class="text">
+	  <p><em>What it takes to light up an LED</em></p>
+	</div>
+      </div>
+
+      <p>Even blue LEDs, which need more voltage, will light dimly with the right resistor. If you’re using just 1.5V (a single AA/D), most LEDs won’t light at all, as you can see from the chart above, because they aren't going above <strong>forward</strong> voltage. That’s a lesson worth learning.</p>
+
+      <h3>Let's try some combinations</h3>
+      <p>You need to know the characteristics of your components and then ensure sufficient voltage to drive them (note that I still have a 330-ohm resistor in the circuit -- we'll get to that in a minute).  It's clear from the chart above that 1.5 VDC won't drive (turn on) a green LED.  But what if we try a red one, which has a lower forward voltage?</p>
+      
+
     </section>
   </main>
 
