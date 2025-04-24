@@ -20,7 +20,7 @@
     <div class="site-title-group">
       <h1>Solder & Signal Projects</h1>
       <p class="subtitle">
-        Replaceable-Battery Power Supply
+        <center>Replaceable-Battery Power Supply</center>
       </p>
     </div>
   </header>
@@ -81,6 +81,60 @@
       <p>Well! We get some light from that red LED.  How come that happens?  I mean, the chart above says that just won't work.  But it does.  In fact, this particular make of red LED will light up, at least a little, with 1.5 VDC -- apparently.  You do the math all day long, but if it's lit, it's lit.</p>
       <p>This goes back to what I say on my homepage: You have to read a little, calculate a little, and then try some things.  All of those steps together tell you what <em>really</em> works and doesn't.</p>
       <p>This brings us to a cardinal rule of electronics: <strong><em>Never trust theory, calculation, or practice alone, but never discount any of those, either.</em></strong>  You have to gather the information first (the LED chart), do some rudimentary calculations (as we did above) to get yourself into a relatively safe range for testing, and then you have to test it yourself.  Nothing else works when building circuits.  Nothing.</p>
+
+      <h2>Can We Stop Here?</h2>
+      <p>We <em>could</em> just stop here and say, "Any of these batteries that will light up a red LED with 1.5V must be good, because it's supposed to be 1.8V to turn them on!"  Well, let's take a hot second and test that: let's try a bunch of these batteries and see what they do.  We won't take pictures of them all, but we will build a little table.</p>
+      <table>
+	<tr>
+	  <th>
+	    Battery #
+	  </th>
+	  <th>
+	    How's the red LED light up?
+	  </th>
+	</tr>
+	<tr>
+	  <td>
+	    1 (Brand A)
+	  </td>
+	  <td>
+	    Visible from front against background
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    2 (Brand A)
+	  </td>
+	  <td>
+	    Visible from front against background
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    3 (Brand B)
+	  </td>
+	  <td>
+	    No response
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    4 (Brand B)
+	  </td>
+	</tr>
+      </table>
+
+      <p>We could go on testing through all the batteries, but a few more tests show us a possible pattern: Brand A seems to deliver better <em>voltage response</em> than Brand B.  But it's also possible that the Brand B batteries are just older, and naturally depleted.</p>
+      <p>We can put more batteries in series and find out -- like this:</p>
+
+      <div class="content-wrap">
+	<img src="images/two-batter-red-led-test.png" alt="Two batteries of either brand seem to get the same results." />
+	<div class="text">
+	  <p><em>Both brands of batteries look to be good to go.</em></p>
+	</div>
+      </div>
+
+      <p>It's possible that one of the battery brands is fresher, or one just supplies a little over-voltage when fully-charged.  Doesn't matter at this point: we'll build a voltmeter to test them better in a future project.  For now, we know we probably have batteries that we can reliably use in the power supply.</p>
     </section>
   </main>
 
