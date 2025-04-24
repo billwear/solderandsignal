@@ -40,7 +40,7 @@
       </div>
 
       <h2>🔋 Step Zero: Are These Batteries Even Any Good?</h2>
-<p>Before we even dream of building a creaky power supply, let’s face it: we don't even know if the batteries work. I mean, I do have a voltmeter, but let’s assme we don’t. Let's assume we’re surviving off the land — and the junk drawer.</p>
+<p>Before we even dream of building a creaky power supply, let’s face it: we don't even know if the batteries work. I mean, I do have a voltmeter, but let’s assume we don’t. Let's assume we’re surviving off the land — and the junk drawer.</p>
 
 <p>Here’s how to test batteries with just an LED and a resistor, while sneaking in a little Ohm’s Law.</p>
 
@@ -54,16 +54,16 @@
 	</div>
       </div>
 
-      <p>This setup doesn’t tell us the exact voltage, but it gives us something better: a visual indicator under load. If the LED lights up, the battery has enough voltage and current to be worth using.  So this this LED isn't lit, does that mean that the battery's bad?</p>
+      <p>This setup doesn’t tell us the exact voltage, but it gives us something better: a visual indicator under load. If the LED lights up, the battery has enough voltage and current to be worth using.  So since this LED isn't lit, does that mean that the battery's bad?</p>
 
       <p>Well, let’s do the math (Ohm’s Law style).  Ohm’s Law is: <strong>V = I x R</strong>, where V is voltage, I is current, and R is resistance.  Pretty basic. We can tell whether a battery has any power left by checking the <em>current</em> (I).  If we solve this equation for current, it's <strong>I = (V_battery - V_forward) / R</strong>.</p>
       <p>You'll noticed my solved form of Ohm's law has a more complex voltage "mini-equation": <strong>(V_battery - V_forward)</strong>.  V_forward represents the <em>Forward</em> voltage of the LED, which is sometimes also called the <em>threshold voltage</em>.  That's the voltage it takes get get current to even flow through the LED.</p>
       <p>These forward voltages are different for different colors of LEDs.  We can use that our advantage if we do it right -- but we'll get to that later. In the meantime, have a look at this chart:</p>
 
-            <div class="content-wrap">
+      <div class="content-wrap">
 	<img src="images/led-output.png" alt="A battery test circuit as it looks in real life." />
 	<div class="text">
-	  <p><em>What it takes to light up an LED</em></p>
+	  <p><em>What it takes to light up an LED.</em></p>
 	</div>
       </div>
 
@@ -71,8 +71,16 @@
 
       <h3>Let's try some combinations</h3>
       <p>You need to know the characteristics of your components and then ensure sufficient voltage to drive them (note that I still have a 330-ohm resistor in the circuit -- we'll get to that in a minute).  It's clear from the chart above that 1.5 VDC won't drive (turn on) a green LED.  But what if we try a red one, which has a lower forward voltage?</p>
-      
 
+      <div class="content-wrap">
+	<img src="images/red-led-test.jpg" alt="Testing a red LED with one 1.5 VDC battery." />
+	<div class="text">
+	  <p><em>A red LED lights up some with 1.5 VDC and a 330-ohm resistor.</em></p>
+	</div>
+      </div>
+      <p>Well! We get some light from that red LED.  How come that happens?  I mean, the chart above says that just won't work.  But it does.  In fact, this particular make of red LED will light up, at least a little, with 1.5 VDC -- apparently.  You do the math all day long, but if it's lit, it's lit.</p>
+      <p>This goes back to what I say on my homepage: You have to read a little, calculate a little, and then try some things.  All of those steps together tell you what <em>really</em> works and doesn't.</p>
+      <p>This brings us to a cardinal rule of electronics: <strong><em>Never trust theory, calculation, or practice alone, but never discount any of those, either.</em></strong>  You have to gather the information first (the LED chart), do some rudimentary calculations (as we did above) to get yourself into a relatively safe range for testing, and then you have to test it yourself.  Nothing else works when building circuits.  Nothing.</p>
     </section>
   </main>
 
