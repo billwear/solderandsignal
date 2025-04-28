@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>S & S: RBPS</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="engineers-journal.html">Journal</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+  <header class="site-header">
+    <img src="images/solder-and-signal-logo.png" alt="Solder & Signal logo" class="logo" />
+    <div class="site-title-group">
+      <h1>Solder & Signal Projects</h1>
+      <p class="subtitle">
+        <center>Improving the Replaceable-Battery Power Supply</center>
+      </p>
+    </div>
+  </header>
+
+  <p style="font-size: 0.85em; text-align: center;">  ⚠️ DIY projects involve real tools and voltages. <a href="/disclaimer.html">Read the safety disclaimer.</a></p>
+
+  <main>
+    <section>
+      <h2>The Very Basic Box Could Be Better</h2>
+      <p>So we didn't overthink our little power supply too much.  We cut a length of PVC pipe to fit 6 AA batteries (with the ends sticking out a bit, so we can keep them compressed).  We taped some wires on the end with scotch tape, and we were off the the races.  Not bad an evening's work.</p>
+      <p>But it could be better.  Scotch tape isn't a permanent solution, and the wires can slip and slide a little -- and maybe get off the conductive surface of the batteries.  Doesn't happen much, but enough that we ought to deal with that problem.</p>
+      <h2>Some Basic Home-Made Terminals</h2>
+      <p>We can create some very basic, home-made terminals for the battery ends with a little solder and a steel washer for an anvil. Then we can attach them with a better quality of tape (electrical tape).  That will still be a little tricky to change out the batteries, but it's better than scotch tape.  We want to improve <em>gradually</em>, as we encounter issues, so that we don't burn out on complicated builds before we're comfortable with the tools, parts, and techniques.</p>
+      <p>Essentially, we're going to turn stranded wire into a terminal by <em>tinning</em> it with solder.  This means we need to heat up the soldering iron.  Here, I've got a steel washer on a heat-proof silicone mat.  I strip a length of wire, braid it, lay it on the washer, and heat wire and washer until they melt solder.</p>
+      <p><em>Never carry solder to a junction on the iron, and never use the iron to melt solder.</em>  It sometimes works, but then again, sometimes it doesn't, and the quality of your connection will be worse if the wire (or component lead) isn't hot enough to melt the solder itself.  We'll talk about how to prevent the heat from damaging components when we come to that.</p>
+
+      <div class="content-wrap">
+	<img src="images/tinning-the-wire.jpg" alt="Using a soldering iron to tin a piece of stranded copper wire." style="max-width: 100%; height: auto;"/>
+	<div class="text">
+	  <p><em>Never carry the solder to the lead on the iron; let the lead melt the solder.</em></p>
+	</div>
+      </div>
+
+      <p>Tinning makes the wire stiff, essentially turning it into a terminal.  In a pinch, you can even push braided, tinned copper wire through a terminal block and use it as a terminal pin.  Not recommended, but it works okay to get you through until you can replace the terminal block.</p>
+
+      <div class="content-wrap">
+	<img src="images/the-tinned-wire-termianl.jpg" alt="A tinned piece of stranded, braided copper wire." style="max-width: 100%; height: auto;"/>
+	<div class="text">
+	  <p><em>This won't spread, bend, or slide off the terminal when it's taped on there.</em></p>
+	</div>
+      </div>
+
+      <p>Next, we just have to tape the terminal onto the battery pole with electrical tape.  A good technique is to </p>
+
+      <div class="content-wrap">
+	<img src="images/finishing-the-build.jpg" alt="Montage of last few build steps." />
+	<div class="text">
+	  <p><em>Scotch tape for now, to see if works.</em></p>
+	</div>
+      </div>
+
+      <p>A couple of small build notes are in order.  First, I used an 820-ohm resistor in series with the red LED, since I've significantly upped the voltage.  The "R" on the paper binder represents a decimal point, so this is "820.0" ohms.  Second, note that these six batteries should be supplying 9VDC, but they're actually giving almost 10 (9.99VDC).  That's consistent with the voltage response I've observed from Brand A batteries.</p>
+
+      <p>Finally, note that I'm not going to <em>leave</em> the funky tape with two stranded wires.  I'm going to solder conductive washers to the wires, and then tape those on with something stronger (like electrical tape).  But that comes later -- right now, we have a working, replaceable-battery power supply.  Minimal cost, minimal effort, maximum simplicity.  Good place to start.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 by Bill Wear. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
+
