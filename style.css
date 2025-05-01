@@ -12,8 +12,6 @@ body {
   text-shadow: 0 0 1px #000;
 }
 
-/* --- Header Section --- */
-
 header.site-header {
   display: flex;
   align-items: center;
@@ -53,9 +51,8 @@ h1 {
   font-style: italic;
   color: #a38c74;
   margin: 0.2rem 0 0;
+  text-align: center;
 }
-
-/* --- Navigation --- */
 
 nav.top-nav ul {
   list-style: none;
@@ -104,8 +101,6 @@ nav.top-nav .submenu a:hover {
   background-color: #a38c74;
 }
 
-/* --- Main Content --- */
-
 main {
   max-width: 1000px;
   margin: 2.5rem auto;
@@ -130,6 +125,12 @@ h1, h2, h3 {
   font-family: 'Literata', serif;
 }
 
+h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: #e3c99c;
+}
+
 a {
   color: #d9a151;
   text-decoration: underline dotted;
@@ -146,8 +147,6 @@ a:hover {
   text-decoration: underline solid;
 }
 
-/* --- Code Blocks --- */
-
 pre, code {
   font-family: 'IBM Plex Mono', monospace;
   background-color: #2d241b;
@@ -159,18 +158,16 @@ pre, code {
   box-shadow: 0 0 8px rgba(92, 70, 49, 0.5);
 }
 
-/* For inline code snippets */
 code {
   padding: 0.2em 0.4em;
   font-size: 0.95em;
   border-radius: 3px;
   background-color: #2d241b;
 }
+
 pre {
   border-top: 3px solid #5c4631;
 }
-
-/* --- Footer --- */
 
 footer {
   text-align: center;
@@ -202,8 +199,6 @@ thead {
 tbody tr:nth-child(odd) {
   background-color: #2a2119;
 }
-
-/* --- Responsive --- */
 
 @media (max-width: 600px) {
   .site-header {
@@ -246,8 +241,6 @@ tbody tr:nth-child(odd) {
   }
 }
 
-/* --- Image & Content Wrapping Utilities --- */
-
 .content-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -258,35 +251,27 @@ tbody tr:nth-child(odd) {
 
 .content-wrap img {
   max-width: 100%;
+  width: 300px;
   height: auto;
-  flex: 1 1 320px;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
 }
 
 .content-wrap .text {
-  flex: 2 1 320px;
+  flex: 1 1 250px;
+  min-width: 250px;
 }
 
-/* Optional utility classes */
-.float-left {
-  float: left;
-  margin: 0 1.5rem 1rem 0;
-  max-width: 45%;
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
 }
 
-.float-right {
-  float: right;
-  margin: 0 0 1rem 1.5rem;
-  max-width: 45%;
-}
-
-@media (max-width: 600px) {
-  .float-left,
-  .float-right {
-    float: none;
-    margin: 1rem auto;
-    display: block;
-    max-width: 100%;
-  }
+.disclaimer {
+  font-size: 0.85em;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
 }
