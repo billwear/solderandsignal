@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>S & S: RBPS</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
@@ -15,195 +15,96 @@
       <li><a href="projects.html">Projects</a></li>
     </ul>
   </nav>
+
   <header class="site-header">
     <img src="images/solder-and-signal-logo.png" alt="Solder & Signal logo" class="logo" />
     <div class="site-title-group">
       <h1>Solder & Signal Projects</h1>
-      <p class="subtitle">
-        <center>Replaceable-Battery Power Supply</center>
-      </p>
+      <p class="subtitle"><center>Replaceable-Battery Power Supply</center></p>
     </div>
   </header>
 
-  <p style="font-size: 0.85em; text-align: center;">  ⚠️ DIY projects involve real tools and voltages. <a href="/disclaimer.html">Read the safety disclaimer.</a></p>
+  <p class="disclaimer">⚠️ DIY projects involve real tools and voltages. <a href="/disclaimer.html">Read the safety disclaimer.</a></p>
 
   <main>
     <section>
-      <h2>🔋 Step Zero: Are These Batteries Even Any Good?</h2>
-      <p>Let's get started with a replaceable-battery power supply.  For these purposes, we <em>won't</em> use rechargeable batteries, for the moment. Instead, we're going to start working with just plain old drugstore batteries.</p>
+      <h2>🔋 What This Project Is About</h2>
+      <p>We're going to build a simple, modular power supply using standard drugstore batteries. But before we can trust any circuit powered by these, we need to ask: Are these batteries even any good?</p>
+
+      <h2>🔎 Step One: Build a Visual Battery Tester</h2>
+      <p>Without a voltmeter? No problem. We'll wire up a red LED and resistor as a primitive voltage indicator. If the LED lights up, the battery still has some life. It’s not precise — it’s practical.</p>
 
       <div class="content-wrap">
-	<img src="images/batteries.jpg" alt="Various types of batteries used in DIY power supply builds." />
-	<div class="text">
-	  <p><em>Note that no endorsement is offered to any particular brand of battery here, in case you can't tell from the weird mix.</em></p>
-	</div>
+        <img src="images/batteries.jpg" alt="Assorted batteries for testing" loading="lazy">
+        <div class="text">
+          <p><em>Just a random mix — no brand endorsements here.</em></p>
+        </div>
       </div>
 
-<p>Before we even dream of building a creaky power supply, let’s face it: we don't even know if the batteries work. I mean, I do have a voltmeter, but let’s assume we don’t. Let's assume we’re surviving off the land — and the junk drawer.</p>
-
-<p>Here’s how to test batteries with just an LED and a resistor, while sneaking in a little Ohm’s Law.</p>
-
-<h3>🔦 LED + Resistor = Instant Battery Tester</h3>
-      <p>To check if a battery has enough voltage left to be useful, we can wire up a very basic circuit:</p>
-      
-      <div class="content-wrap">
-	<img src="images/battery-test-circuit.png" alt="A battery test circuit as it looks in real life." />
-	<div class="text">
-	  <p><em>Ah, so the light isn't lit, so the battery's bad?  Not so fast: there's a little math we need to do.</em></p>
-	</div>
-      </div>
-
-      <p>This setup doesn’t tell us the exact voltage, but it gives us something better: a visual indicator under load. If the LED lights up, the battery has enough voltage and current to be worth using.  So since this LED isn't lit, does that mean that the battery's bad?</p>
-
-      <p>Well, let’s do the math (Ohm’s Law style).  Ohm’s Law is: <strong>V = I x R</strong>, where V is voltage, I is current, and R is resistance.  Pretty basic. We can tell whether a battery has any power left by checking the <em>current</em> (I).  If we solve this equation for current, it's <strong>I = (V_battery - V_forward) / R</strong>.</p>
-      <p>You'll noticed my solved form of Ohm's law has a more complex voltage "mini-equation": <strong>(V_battery - V_forward)</strong>.  V_forward represents the <em>Forward</em> voltage of the LED, which is sometimes also called the <em>threshold voltage</em>.  That's the voltage it takes get get current to even flow through the LED.</p>
-      <p>These forward voltages are different for different colors of LEDs.  We can use that our advantage if we do it right -- but we'll get to that later. In the meantime, have a look at this chart:</p>
+      <h3>LED + Resistor = Instant Insight</h3>
+      <p>Our tester is simple: a red LED and a 330Ω resistor in series. Connect the leads to the battery and observe. No glow? Maybe it’s dead. But maybe not.</p>
 
       <div class="content-wrap">
-	<img src="images/led-output.png" alt="A battery test circuit as it looks in real life." />
-	<div class="text">
-	  <p><em>What it takes to light up an LED.</em></p>
-	</div>
+        <img src="images/battery-test-circuit.png" alt="Basic LED + resistor circuit for battery testing" loading="lazy">
+        <div class="text">
+          <p><em>Ah, no glow? Don’t jump to conclusions — math still matters.</em></p>
+        </div>
       </div>
 
-      <p>Even blue LEDs, which need more voltage, will light dimly with the right resistor. If you’re using just 1.5V (a single AA/D), most LEDs won’t light at all, as you can see from the chart above, because they aren't going above <strong>forward</strong> voltage. That’s a lesson worth learning.</p>
-
-      <h3>Let's try some combinations</h3>
-      <p>You need to know the characteristics of your components and then ensure sufficient voltage to drive them (note that I still have a 330-ohm resistor in the circuit -- we'll get to that in a minute).  It's clear from the chart above that 1.5 VDC won't drive (turn on) a green LED.  But what if we try a red one, which has a lower forward voltage?</p>
+      <p>To analyze it, we use Ohm’s Law: <strong>I = (V_battery - V_forward) / R</strong>. The LED won’t light until the battery provides enough current above the LED’s forward voltage threshold. Red LEDs light around 1.8V, greens higher, blues higher still. So even if your 1.5V battery doesn’t light one, it might not be dead — just mismatched.</p>
 
       <div class="content-wrap">
-	<img src="images/red-led-test.jpg" alt="Testing a red LED with one 1.5 VDC battery." />
-	<div class="text">
-	  <p><em>A red LED lights up some with 1.5 VDC and a 330-ohm resistor.</em></p>
-	</div>
+        <img src="images/led-output.png" alt="LED forward voltages by color" loading="lazy">
+        <div class="text">
+          <p><em>Know your LED’s forward voltage — it makes all the difference.</em></p>
+        </div>
       </div>
-      <p>Well! We get some light from that red LED.  How come that happens?  I mean, the chart above says that just won't work.  But it does.  In fact, this particular make of red LED will light up, at least a little, with 1.5 VDC -- apparently.  You do the math all day long, but if it's lit, it's lit.</p>
-      <p>This goes back to what I say on my homepage: You have to read a little, calculate a little, and then try some things.  All of those steps together tell you what <em>really</em> works and doesn't.</p>
-      <p>This brings us to a cardinal rule of electronics: <strong><em>Never trust theory, calculation, or practice alone, but never discount any of those, either.</em></strong>  You have to gather the information first (the LED chart), do some rudimentary calculations (as we did above) to get yourself into a relatively safe range for testing, and then you have to test it yourself.  Nothing else works when building circuits.  Nothing.</p>
 
-      <h3>Can We Stop Here?</h3>
-      <p>We <em>could</em> just stop here and say, "Any of these batteries that will light up a red LED with 1.5V must be good, because it's supposed to be 1.8V to turn them on!"  Well, let's take a hot second and test that: let's try a bunch of these batteries and see what they do.  We won't take pictures of them all, but we can tabulate a little experiment.</p>
+      <h3>🧪 Red LED vs. 1.5V</h3>
+      <p>Let’s test a red LED — lower forward voltage. Guess what? It glows. That’s your visual voltmeter in action.</p>
+
+      <div class="content-wrap">
+        <img src="images/red-led-test.jpg" alt="Testing red LED with 1.5V" loading="lazy">
+        <div class="text">
+          <p><em>Even "impossible" matches can light — trust but verify.</em></p>
+        </div>
+      </div>
+
+      <h3>🔬 Batch Testing Batteries</h3>
+      <p>Time to test a pile. We’ll light the LED with each battery and record results:</p>
+
       <table>
-	<tr>
-	  <th>
-	    Battery #
-	  </th>
-	  <th>
-	    How's the red LED light up?
-	  </th>
-	</tr>
-	<tr>
-	  <td>
-	    1 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    2 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    3 (Brand B)
-	  </td>
-	  <td>
-	    No response
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    4 (Brand B)
-	  </td>
-	  <td>
-	    No response
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    4 (Brand B)
-	  </td>
-	  <td>
-	    No response
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    5 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    6 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    7 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    8 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    9 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
-	<tr>
-	  <td>
-	    10 (Brand A)
-	  </td>
-	  <td>
-	    Visible from front against background
-	  </td>
-	</tr>
+        <thead>
+          <tr><th>Battery #</th><th>Red LED Response</th></tr>
+
+        </thead>
+        <tbody>
+          <tr><td>1 (Brand A)</td><td>Visible</td></tr>
+          <tr><td>2 (Brand A)</td><td>Visible</td></tr>
+          <tr><td>3–4 (Brand B)</td><td>No response</td></tr>
+          <tr><td>5–10 (Brand A)</td><td>Visible</td></tr>
+        </tbody>
       </table>
 
-      <p>We could go on testing through all the batteries, but a few more tests show us a possible pattern: Brand A seems to deliver better <em>voltage response</em> than Brand B.  But it's also possible that the Brand B batteries are just older, and naturally depleted.</p>
-      <p>We can put more batteries in series and find out enough to get us started, like this:</p>
+      <p>Conclusion? Brand A’s probably fresh. Brand B? Maybe aged or lower output. Two batteries in series from either brand did fine.</p>
 
       <div class="content-wrap">
-	<img src="images/two-battery-red-led-test.jpg" alt="Two batteries of either brand seem to get the same results." />
-	<div class="text">
-	  <p><em>Both brands of batteries look to be good to go.</em></p>
-	</div>
+        <img src="images/two-battery-red-led-test.jpg" alt="Two 1.5V batteries driving a red LED" loading="lazy">
+        <div class="text">
+          <p><em>More voltage, more glow. Either brand works in series.</em></p>
+        </div>
       </div>
 
-      <p>It's possible that one of the battery brands is fresher, or one just supplies a little over-voltage when fully-charged.  Doesn't matter at this point: we'll build a voltmeter to test them better in a future project, and we'll learn all about the voltage response of batteries.  For now, we know we probably have batteries that we can reliably use in the power supply.</p>
-      <h3>Don't look for complicated solutions to simple problems</h3>
-      <p>The picture above is a good example of another best practice you might think about adopting: Don't find complicated solutions to simple problems.  You see some teacher's stick-on putty and a couple of piece of bent metal in the drawing, but as you also see, they didn't help the problem.  The simplest solution -- using scotch tape to attach the leads to the two batteries, and then just pressing the batteries together -- solved the problem really quickly. And, of course, getting a longer piece of wire to extend the circuit a bit.</p>
+      <h3>🛠️ Don’t Overthink Simple Problems</h3>
+      <p>I tried fancier connectors, adhesives, tricks. But in the end? A little scotch tape and a longer jumper wire won the day. Lesson: don’t look for clever solutions to simple problems.</p>
 
-      <p>Next, <a href="rbps2.html">we'll start trying to build our power supply</a>, starting with just a basic battery box.</p>
+      <h3>Next Up: Building the Box</h3>
+      <p><a href="rbps2.html">Next, we’ll build the enclosure</a> and start making this supply stable and swappable. Let’s go.</p>
     </section>
   </main>
 
   <footer>
     <p>© 2025 by Bill Wear. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
-
