@@ -42,18 +42,12 @@
 
       <p><center><img src="images/led-output.png" alt="LED forward voltages by color" width="100%"></center></p>
 
-      <h3>🧪 Red LED vs. 1.5V</h3>
-      <p>Let’s test a red LED — lower forward voltage. Guess what? It glows. That’s your visual voltmeter in action.</p>
+      <p>Let’s test a red LED, which has lower forward voltage. Guess what? It glows. That’s your visual voltmeter in action.</p>
 
-      <div class="content-wrap">
-        <img src="images/red-led-test.jpg" alt="Testing red LED with 1.5V" loading="lazy">
-        <div class="text">
-          <p><em>Even "impossible" matches can light — trust but verify.</em></p>
-        </div>
-      </div>
+        <p><center><img src="images/red-led-test.jpg" alt="Testing red LED with 1.5V" width="100%"></center></p>
 
-      <h3>🔬 Batch Testing Batteries</h3>
-      <p>Time to test a pile. We’ll light the LED with each battery and record results:</p>
+      <h3>Batch testing batteries</h3>
+      <p>Time to test our random pile of batteries.  We’ll measure each battery with our little tester circuit and record the results:</p>
 
       <table>
         <thead>
@@ -68,20 +62,14 @@
         </tbody>
       </table>
 
-      <p>Conclusion? Brand A’s probably fresh. Brand B? Maybe aged or lower output. Two batteries in series from either brand did fine.</p>
+      <p>Conclusion? Brand A’s either fresher than Brand B, or just gives a better voltage response.  We'll talk about that later, but Brand A is probably built to set the lower end of the tolerance at 1.5V, meaning it may give +10% to 20% more, but never less than the <em>minimum nominal voltage (i.e. 1.5V).</p>
 
-      <div class="content-wrap">
-        <img src="images/two-battery-red-led-test.jpg" alt="Two 1.5V batteries driving a red LED" loading="lazy">
-        <div class="text">
-          <p><em>More voltage, more glow. Either brand works in series.</em></p>
-        </div>
-      </div>
+      <p>We can get a better view with 3.0 VDC (Volts of Direct Current), which is two AA batteres in series.  Here's a very hacky test rig for that.</p>
+      <p><center><img src="images/two-battery-red-led-test.jpg" alt="Two 1.5V batteries driving a red LED" width="100%"/></center></p>
 
-      <h3>🛠️ Don’t Overthink Simple Problems</h3>
+      <h3>Note to self: Don’t overthink simple problems</h3>
       <p>I tried fancier connectors, adhesives, tricks. But in the end? A little scotch tape and a longer jumper wire won the day. Lesson: don’t look for clever solutions to simple problems.</p>
 
-      <h3>Next Up: Building the Box</h3>
-      <p><a href="rbps2.html">Next, we’ll build the enclosure</a> and start making this supply stable and swappable. Let’s go.</p>
     </section>
   </main>
 
