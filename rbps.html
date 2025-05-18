@@ -32,20 +32,15 @@
       <p>We're going to build a simple, modular power supply using standard drugstore batteries. But before we can trust any circuit powered by these, we need to ask: Are these batteries even any good?</p>
 
       <h2>Step one: Build a visual battery tester</h2>
-      <p>Without a voltmeter? No problem. We'll wire up a red LED and resistor as a primitive voltage indicator. If the LED lights up, the battery still has some life. It’s not precise — it’s practical.</p>
+      <p>Without a voltmeter? No problem. We'll wire up a green LED and resistor as a primitive voltage indicator. If the LED lights up, the battery still has some life. It’s not precise — it’s practical.</p>
 
-      <p>First of all, consider the equation LED + Resistor = Instant Insight. Our tester is simple: a red LED and a 330Ω resistor in series. Connect the leads to the battery and observe. No glow? Maybe it’s dead, but maybe not.</p>
+      <p>First of all, consider the equation LED + Resistor = Instant Insight. Our tester is simple: a greenLED and a 330Ω resistor in series. Connect the leads to the battery and observe. No glow? Maybe it’s dead, but maybe not.</p>
 
       <p><center><img src="images/battery-test-circuit.png" alt="Basic LED + resistor circuit for battery testing" width="100%"></center></p>
 
-      <p>To analyze it, we use Ohm’s Law: <strong>I = (V_battery - V_forward) / R</strong>. The LED won’t light until the battery provides enough current above the LED’s forward voltage threshold. Red LEDs light around 1.8V, greens higher, blues higher still. So even if your 1.5V battery doesn’t light one, it might not be dead — just mismatched.</p>
+      <p>To analyze it, let's use Ohm’s Law: <strong>I = (V_battery - V_forward) / R</strong>. The LED won’t light until the battery provides enough current above the LED’s forward voltage threshold. Red LEDs light around 1.8V, greens higher, blues higher still. So even if your 1.5V battery doesn’t light one, it might not be dead — just mismatched.</p>
 
-      <div class="content-wrap">
-        <img src="images/led-output.png" alt="LED forward voltages by color" loading="lazy">
-        <div class="text">
-          <p><em>Know your LED’s forward voltage — it makes all the difference.</em></p>
-        </div>
-      </div>
+      <p><center><img src="images/led-output.png" alt="LED forward voltages by color" width="100%"></center></p>
 
       <h3>🧪 Red LED vs. 1.5V</h3>
       <p>Let’s test a red LED — lower forward voltage. Guess what? It glows. That’s your visual voltmeter in action.</p>
