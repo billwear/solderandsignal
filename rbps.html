@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S & S: RBPS</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="engineers-journal.html">Journal</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+
+  <header class="site-header">
+    <img src="images/solder-and-signal-logo.png" alt="Solder & Signal logo" class="logo" />
+    <div class="site-title-group">
+      <h1>Solder & Signal Projects</h1>
+      <p class="subtitle"><center>Replaceable-Battery Power Supply</center></p>
+    </div>
+  </header>
+
+  <p class="disclaimer">⚠️ DIY projects involve real tools and voltages. <a href="/disclaimer.html">Read the safety disclaimer.</a></p>
+
+  <main>
+    <section>
+      <h2>What this project is about</h2>
+      <p>We're going to build a simple, modular power supply using standard drugstore batteries. But before we can trust any circuit powered by these, we need to ask: Are these batteries even any good?</p>
+
+      <h2>Step one: Build a visual battery tester</h2>
+      <p>Without a voltmeter? No problem. We'll wire up a green LED and resistor as a primitive voltage indicator. If the LED lights up, the battery still has some life. It’s not precise — it’s practical.</p>
+
+      <p>First of all, consider the equation LED + Resistor = Instant Insight. Our tester is simple: a greenLED and a 330Ω resistor in series. Connect the leads to the battery and observe. No glow? Maybe it’s dead, but maybe not.</p>
+
+      <p><center><img src="images/battery-test-circuit.png" alt="Basic LED + resistor circuit for battery testing" width="100%"></center></p>
+
+      <p>To analyze it, let's use Ohm’s Law: <strong>I = (V_battery - V_forward) / R</strong>. The LED won’t light until the battery provides enough current above the LED’s forward voltage threshold. Red LEDs light around 1.8V, greens higher, blues higher still. So even if your 1.5V battery doesn’t light one, it might not be dead — just mismatched.</p>
+
+      <p><center><img src="images/led-output.png" alt="LED forward voltages by color" width="100%"></center></p>
+
+      <p>Let’s test a red LED, which has lower forward voltage. Guess what? It glows. That’s your visual voltmeter in action.</p>
+
+        <p><center><img src="images/red-led-test.jpg" alt="Testing red LED with 1.5V" width="100%"></center></p>
+
+      <h3>Batch testing batteries</h3>
+      <p>Time to test our random pile of batteries.  We’ll measure each battery with our little tester circuit and record the results:</p>
+
+      <table>
+        <thead>
+          <tr><th>Battery #</th><th>Red LED Response</th></tr>
+
+        </thead>
+        <tbody>
+          <tr><td>1 (Brand A)</td><td>Visible</td></tr>
+          <tr><td>2 (Brand A)</td><td>Visible</td></tr>
+          <tr><td>3–4 (Brand B)</td><td>No response</td></tr>
+          <tr><td>5–10 (Brand A)</td><td>Visible</td></tr>
+        </tbody>
+      </table>
+
+      <p>Conclusion? Brand A’s either fresher than Brand B, or just gives a better voltage response.  We'll talk about that later, but Brand A is probably built to set the lower end of the tolerance at 1.5V, meaning it may give +10% to 20% more, but never less than the <em>minimum nominal voltage</em> (i.e. 1.5V).</p>
+
+      <p>We can get a better view with 3.0 VDC (Volts of Direct Current), which is two AA batteres in series.  Here's a very hacky test rig for that.</p>
+      <p><center><img src="images/two-battery-red-led-test.jpg" alt="Two 1.5V batteries driving a red LED" width="100%"/></center></p>
+
+      <p><strong>Note to self:</strong> Don’t overthink simple problems. I tried fancier connectors, adhesives, tricks. But in the end? A little scotch tape and a longer jumper wire won the day. Lesson: don’t look for clever solutions to simple problems.</p>
+
+      <h2>Step two: Build a box</h2>
+      <p>So let's carry away that lesson about simple problems and simple solutions. I'd like to get a basic 9 VDC power source in a small package (that's called <em>small form factor</em> in tech lingo).  That's 6 AA batteries in series.</p>
+      <p>Digging around on the farm, there are lots of wooden, plastic, and metal scraps that we could "machine" into a nice battery box.  Plastic is the best choice, and there are all kinds of plastic things around.</p>
+
+      <p><center><img src="images/scraps.jpg" width="100%"></center></p>
+
+      <p>All of these look promising, each requiring more or less fabrication to make an enclosure.  But we're still over-complicating things.  What's the most common material avaialble on a modern farm?  Half-inch PVC pipe. Do AAA batteries fit in 1/2" PVC pipe?  As a matter of fact, they do, almost perfectly.</p>
+
+      <p><center><img src="images/half-inch-dia-pvc-pipe-and-aa-batteries.jpg" width="100%"></center></p>
+      <p>Let's stick with the "simplicity" theme, and just grab a pipe cutter.  Hand tools are usually much more convenient on the farm, where there isn't necessarily electricity everywhere.  
+      <p><center><img src="images/cutting-pipe-with-hand-tools-is-easier.jpg" width="100%"></center></p>
+      <p>I made sure the batteries fit so that they're tightly stacked, and sticking out a little on the ends, so I can use tape to keep them pressed together.  Clip one end off a couple of jumper cables, strip some wire, a little tape job, and voila!  We have a working <em>prototype</em> of a replaceable-battery power supply.</p>
+      <p><center><img src="images/finishing-the-build.jpg" width="100%"></center></p>
+      <p>A couple of small build notes are in order.  First, I used an 820-ohm resistor in series with the red LED, since I've significantly upped the voltage.  The "R" on the paper binder represents a decimal point, so this is "820.0" ohms.  Second, note that these six batteries should be supplying 9VDC, but they're actually giving almost 10 (9.99VDC).  That's consistent with the voltage response I've observed from Brand A batteries.</p>
+      <p>Also, note that I'm not going to <em>leave</em> the funky tape with two stranded wires.  I'm going to tin the wires (that is, twist the strands together and coat them with solder), and then tape those on with something stronger like electrical tape.</p>
+      <p><center><img src="images/tinning-the-wire.jpg" width="100%"></center></p>
+      <p><em>Never carry the solder to the lead on the iron.</em>  Let the iron heat <em>the lead</em> and let the <em>lead</em> melt the solder.  One easy way to do this is to get a heat-resistant surface (this silicone soldering pad) and a solder-resistant metal washer (most of the thicker ones don't take solder well).  The washer transfers the heat to the wire, and the wire melts the solder -- but the wire isn't joined to the washer.</p>
+      <p>Tinning makes the wire stiff, essentially turning it into a terminal. This won't spread, bend, or slide off the terminal when it's taped on there.  And once we tape these down on the battery ends, along with a wrap for strain relief, we have a very simple and reliable, 9V, Replaceable Battery Power Supply (RBPS).</p>
+      <p><center><img src="images/tape-for-strain-relief-also.jpg" width="100%"></center></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 by Bill Wear. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
