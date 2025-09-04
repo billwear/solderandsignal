@@ -3,7 +3,7 @@
 #+options: toc:2 num:t html-postamble:nil
 #+html_head: <link rel="stylesheet" href="/assets/css/site.css"/>
 
-Welcome to the lab. This site is built with [[https://orgmode.org/][Org Mode]] and published via =org-publish= to GitHub Pages.
+Welcome to my lab. This site is built with [[https://orgmode.org/][Org Mode]] and published via =org-publish= to GitHub Pages.
 
 - [[file:about.org][About]]
 - [[file:projects.org][Projects]]
