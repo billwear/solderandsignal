@@ -17,7 +17,7 @@
          :time-stamp-file nil
          :html-doctype "html5"
          :html-html5-fancy t
-         :html-head "<link rel=\"stylesheet\" href=\"/assets/css/site.css\"/>"
+         :html-head "<link rel=\"stylesheet\" href=\"/assets/css/lab.css\"/>"
          :html-head-include-default-style nil
          :html-head-include-scripts nil
          :auto-sitemap t
