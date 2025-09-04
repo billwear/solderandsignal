@@ -1,6 +1,5 @@
 #+title: First post
 #+date: 2025-09-04
 #+options: toc:nil num:nil html-postamble:nil
-#+html_head: <link rel="stylesheet" href="/assets/css/site.css"/>
 
 This is only a smoke test to prove export works. If you're reading it on the site, the pipeline did its job.

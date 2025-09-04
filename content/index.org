@@ -1,7 +1,6 @@
 #+title: Solder & Signal
 #+subtitle: Notes from the bench, by Bill Wear
 #+options: toc:2 num:t html-postamble:nil
-#+html_head: <link rel="stylesheet" href="/assets/css/site.css"/>
 
 Welcome to my lab. This site is built with [[https://orgmode.org/][Org Mode]] and published via =org-publish= to GitHub Pages.
 
