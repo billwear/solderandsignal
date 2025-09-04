@@ -3,6 +3,24 @@
 (require 'ox-publish)
 
 (setq org-export-with-sub-superscripts '{})
+;; 1) Prefer relative file paths in links (prevents file:///)
+(setq org-link-file-path-type 'relative)
+(setq org-html-link-use-abs-url nil)
+
+(defvar s&s-site-prefix (or (getenv "SITE_PREFIX") "")
+  "Prefix for absolute asset links. \"\" for custom domain, \"/solderandsignal\" for project pages.")
+
+(defun s&s-rewrite-asset-uris (html backend info)
+  "Rewrite file:///assets/* to proper web paths, with optional prefix."
+  (let* ((re-file-src "src=\\\"file:///assets/")
+         (re-file-href "href=\\\"file:///assets/")
+         (re-web-src  (format "src=\\\"%s/assets/" s&s-site-prefix))
+         (re-web-href (format "href=\\\"%s/assets/" s&s-site-prefix)))
+    (setq html (replace-regexp-in-string re-file-src  re-web-src  html))
+    (setq html (replace-regexp-in-string re-file-href re-web-href html))
+    html))
+
+(add-to-list 'org-export-filter-final-output-functions #'s&s-rewrite-asset-uris)
 
 (setq org-publish-project-alist
       '(("solderandsignal-org"
