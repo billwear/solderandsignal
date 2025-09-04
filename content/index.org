@@ -1,16 +1,47 @@
 #+title: Solder & Signal
-#+subtitle: Notes from the bench, by Bill Wear
-#+options: toc:2 num:t html-postamble:nil
+#+subtitle: Instruments, measurement, and signal craft you can build
+#+options: toc:nil num:nil html-postamble:nil
 
-Welcome to my lab. This site is built with [[https://orgmode.org/][Org Mode]] and published via =org-publish= to GitHub Pages.
 
-- [[file:about.org][About]]
-- [[file:projects.org][Projects]]
-- [[file:posts/first-post.org][First post]]
+#+begin_div :class callout
+Solder & Signal is a working lab notebook. We build **measurement instruments first**, then use them to understand and make better circuits. Every post includes bill of materials, build steps, scope shots, and troubleshooting notes.
+#+end_div
 
-#+begin_quote
-“What one learns, we all learn.”
-#+end_quote
 
-* Recent
-- [[file:posts/first-post.org][A very tiny post]] (proof of life)
+- [[file:posts/start-here.org][Start here: how this lab works]]
+- [[file:projects.org][Project list and queue]]
+- [[file:about.org][About the author]]
+
+
+#+attr_html: :class taped
+[[/assets/img/breadboard.jpg]]
+
+
+* What you’ll find here
+- **Bench instruments you can build:** current limiter, op‑amp probe, function generator, capacitance/ESR, frequency counter.
+- **Measured results:** photos, traces, and notes that explain what changed and why.
+- **Minimal dependencies:** basic parts, salvage when practical, reproducible steps.
+- **Respect for your time:** short, task‑oriented guides with clear checkpoints.
+
+
+* Current build queue
+1. LED current limiter (sane, cheap, hard to mess up)
+2. Op‑amp probe (unity‑gain follower; learn rails, biasing, bandwidth)
+3. Simple function generator (square/sine; where jitter and duty cycle live)
+4. Capacitance + ESR meter (why parts you own lie to you)
+
+
+#+attr_html: :class polaroid
+[[/assets/img/oscilloscope-trace.jpg]]
+
+
+* Ground rules
+- Measure before conclusions. Record rails, reference, ambient temp.
+- Prefer parts you can actually get. Link suppliers, list alternates.
+- Explain failures. “Known bad” is data.
+- Keep the BOM under control. Price is a design constraint.
+
+
+* Subscribe & contribute
+- Open issues or PRs for fixes or alternative builds.
+- Share your bench photos and traces; I’ll link good reproductions.
