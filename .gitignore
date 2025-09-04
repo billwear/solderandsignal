@@ -1,0 +1,10 @@
+# Org publish cache, temp
+*.elc
+publish/ 
+.cache/
+.#*
+*~
+*.org_archive
+
+# Local build artifacts
+docs/*.map

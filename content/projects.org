@@ -1,0 +1,12 @@
+#+title: Projects
+#+options: toc:2 num:t html-postamble:nil
+#+html_head: <link rel="stylesheet" href="/assets/css/site.css"/>
+
+* Bench builds
+- LED current limiter
+- Op-amp probe
+- Function generator
+
+* Homelab
+- NAS rebuild notes
+- PXE experiments

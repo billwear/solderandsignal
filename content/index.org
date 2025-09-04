@@ -1,0 +1,17 @@
+#+title: Solder & Signal
+#+subtitle: Notes from the bench, by Bill Wear
+#+options: toc:2 num:t html-postamble:nil
+#+html_head: <link rel="stylesheet" href="/assets/css/site.css"/>
+
+Welcome to the lab. This site is built with [[https://orgmode.org/][Org Mode]] and published via =org-publish= to GitHub Pages.
+
+- [[file:about.org][About]]
+- [[file:projects.org][Projects]]
+- [[file:posts/first-post.org][First post]]
+
+#+begin_quote
+“What one learns, we all learn.”
+#+end_quote
+
+* Recent
+- [[file:posts/first-post.org][A very tiny post]] (proof of life)
