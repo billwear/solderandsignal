@@ -7,4 +7,6 @@ I've designed boards and the workstations to test them. I've designed an electro
 ## Getting back to my roots
 Lately I've been working as a technical author, but I miss my circuit days, so I'm starting this little subdomain to get back into it. I've been away from it for so long that I want to start from square one.
 
-You're welcome to join me.
+There's never been a time in my life that I didn't have a shortwave radio around somewhere. Radio and signal craft has always been a meaningful part of my life, either as a job or a hobby. 
+
+So here I go! You're welcome to join me.
