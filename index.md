@@ -4,6 +4,7 @@ While the soldering iron’s heating up, let me introduce myself. I'm Bill Wear,
 
 I've designed boards and the workstations to test them. I've designed an electronics diagnostic rack for the NASA Space Shuttle program. I've also written micro-code for radiology machines. 
 
+## Getting back to my roots
 Lately I've been working as a technical author, but I miss my circuit days, so I'm starting this little subdomain to get back into it. I've been away from it for so long that I want to start from square one.
 
 You're welcome to join me.
