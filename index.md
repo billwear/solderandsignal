@@ -1,7 +1,7 @@
 <details>
   <summary>Menu</summary>
 
-<a href="signal-craft-basics.md">Signal craft basics</a>
+[Signal craft basics](signal-craft-basics)
 </details>
 ----------------
 Solder &amp; Signal is my working lab notebook. I'm planning to build **measurement instruments** first, then use them to understand and make better circuits. 
