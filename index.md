@@ -1,3 +1,9 @@
+<details>
+  <summary>Menu</summary>
+
+  [Signal craft basics](signal-craft-basics.md)
+</details>
+----------------
 Solder &amp; Signal is my working lab notebook. I'm planning to build **measurement instruments** first, then use them to understand and make better circuits. 
 
 While the soldering iron’s heating up, let me introduce myself. I'm Bill Wear, an electrical engineer who has been dabbling in circuits and radio for more than 50 years.
