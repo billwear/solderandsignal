@@ -1,7 +1,8 @@
 <details>
   <summary>Menu</summary>
 
-[Signal craft basics](signal-craft-basics)
+  [Signal craft basics]({{ "/signal-craft-basics/" | relative_url }})
+
 </details>
 ----------------
 Solder &amp; Signal is my working lab notebook. I'm planning to build **measurement instruments** first, then use them to understand and make better circuits. 
