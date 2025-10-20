@@ -1,7 +1,0 @@
-#+TITLE: Solder & Signal
-
-- [[file:index.org][Solder & Signal]]
-- [[file:projects.org][Projects]]
-- [[file:about.org][About]]
-- posts
-  - [[file:posts/first-post.org][First post]]

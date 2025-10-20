@@ -1,17 +1,14 @@
-<details>
-  <summary>Menu</summary>
-<a href="signal-craft-basics.html">Signal craft basics</a>
-</details>
-----------------
-Solder &amp; Signal is my working lab notebook. I'm planning to build **measurement instruments** first, then use them to understand and make better circuits. 
+---
+layout: default
+title: home
+---
 
-While the soldering iron’s heating up, let me introduce myself. I'm Bill Wear, an electrical engineer who has been dabbling in circuits and radio for more than 50 years.
+# start simple. see everything.
 
-I've designed boards and the workstations to test them. I've designed an electronics diagnostic rack for the NASA Space Shuttle program. I've also written micro-code for radiology machines. 
+this is a minimal site with no theme and no magic. you control the html, css, and structure.
 
-## Getting back to my roots
-Lately I've been working as a technical author, but I miss my circuit days, so I'm starting this little subdomain to get back into it. I've been away from it for so long that I want to start from square one.
+- edit `_layouts/default.html` to change the chrome
+- edit `assets/css/main.css` to change the look
+- edit this `index.md` to change the home content
 
-There's never been a time in my life that I didn't have a shortwave radio around somewhere. Radio and signal craft has always been a meaningful part of my life, either as a job or a hobby. 
-
-So here I go! You're welcome to join me.
+want a post? there is a sample: [_first post_](/blog/first-post/).

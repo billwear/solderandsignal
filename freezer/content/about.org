@@ -1,4 +1,0 @@
-#+title: About
-#+options: toc:nil num:nil html-postamble:nil
-
-Solder & Signal is a practical electronics log: instruments, measurement, and signal craft. Built with Org. Deployed as static HTML from =docs/=.
